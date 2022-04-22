@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 $: << File.expand_path("../test", __dir__)
 
+puts "Preparing test database..."
+`cd test/dummy; RAILS_ENV=test ./bin/rails db:prepare db:seed`
+
 require "bundler/setup"
 require "rails/plugin/test"
