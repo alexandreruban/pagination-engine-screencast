@@ -1,6 +1,5 @@
-require "paginate/version"
+require "paginate/page"
 require "paginate/railtie"
 
 module Paginate
-  # Your code goes here...
 end
