@@ -5,3 +5,8 @@ gemspec
 
 gem "sqlite3"
 gem "puma"
+
+group :test do
+  gem "capybara"
+  gem "selenium-webdriver"
+end
