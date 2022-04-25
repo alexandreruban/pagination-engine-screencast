@@ -10,7 +10,7 @@ By the end of the screencast, you should be able to create your own Rails engine
 
 ## Usage
 
-Our pagination engine provides the `set_page_and_extract_portion_from` method you can use inside your controllers to paginate a collection of records:
+Our pagination engine provides the `set_page_and_extract_portion_from` method you can use inside your controllers to paginate a collection of records base on the `?page=n` query string:
 
 ```rb
 # app/controllers/recordings_controller.rb
@@ -32,11 +32,11 @@ In the view, it gives you access to a `@page` object you can use to link to the 
 <%= render @recordings %>
 
 <% unless @page.first? %>
-  <%= link_to "Previous page", root_path(page: @page.previous_param) %>
+  <%= link_to "Previous page", recordings_path(page: @page.previous_param) %>
 <% end %>
 
 <% unless @page.last? %>
-  <%= link_to "Next page", root_path(page: @page.next_param) %>
+  <%= link_to "Next page", recordings_path(page: @page.next_param) %>
 <% end %>
 ```
 
